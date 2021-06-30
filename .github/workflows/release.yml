@@ -6,7 +6,7 @@ on:
 
 jobs:
   release-windows-amd64:
-    name: release windows/amd64
+    name: release windows/amd64 go binary
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -15,3 +15,6 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         goos: windows
         goarch: amd64
+        project_path: "./"
+        binary_name: "gosharex"
+        ldflags: "-s -w"
